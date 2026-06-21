@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sony WH-1000XM6 — Silence, Perfected.</title>
+  <meta name="description"
+    content="Experience the ultimate in noise cancellation and high-fidelity sound. Explore the cinematic reveal and engineering showcase of the new Sony WH-1000XM6 headphones.">
+  <link rel="stylesheet" href="index.css">
+  <script src="main.js" defer></script>
+</head>
+
+<body>
+
+  <!-- Cinematic Preloader -->
+  <div id="preloader">
+    <div class="preloader-content">
+      <div class="preloader-logo">SONY</div>
+      <div class="preloader-bar-container">
+        <div class="preloader-bar" id="preloader-bar"></div>
+      </div>
+      <div class="preloader-percentage" id="preloader-percentage">00%</div>
+    </div>
+  </div>
+
+  <!-- Apple-Style Sticky Navbar -->
+  <nav class="navbar" id="navbar">
+    <a href="#" class="nav-logo">WH-1000XM6</a>
+    <ul class="nav-links">
+      <li><a href="#" class="active" data-section="hero">Overview</a></li>
+      <li><a href="#" data-section="acoustic">Acoustics</a></li>
+      <li><a href="#" data-section="processor">V3 Chip</a></li>
+      <li><a href="#" data-section="array">Mic Array</a></li>
+      <li><a href="#" data-section="specs">Specs</a></li>
+    </ul>
+    <button class="nav-cta" id="nav-preorder-btn">Pre-order</button>
+  </nav>
+
+  <!-- Main Scroll Container -->
+  <div class="scroll-container">
+    <div class="scroll-track" id="scroll-track">
+
+      <!-- Sticky Viewport containing Canvas & Overlays -->
+      <div class="sticky-viewport">
+        <!-- Radial Ambient Glow -->
+        <div class="glow-bg"></div>
+
+        <!-- High-Performance Canvas -->
+        <canvas id="product-canvas"></canvas>
+
+        <!-- Technical HUD Blueprint Overlays -->
+        <div class="hud-layer" id="hud-layer">
+          <!-- Cushion callout (active around peak explosion) -->
+          <div class="hud-point" id="hud-cushion" style="top: 60%; left: 32%;">
+            <div class="hud-ring"></div>
+            <div class="hud-line" style="transform: rotate(180deg); width: 120px; left: -120px;"></div>
+            <div class="hud-label" style="left: -280px;">PRESSURE-RELIEVING CUSHIONS</div>
+          </div>
+          <!-- Carbon Driver Core callout -->
+          <div class="hud-point" id="hud-driver" style="top: 48%; left: 42%;">
+            <div class="hud-ring"></div>
+            <div class="hud-line" style="transform: rotate(200deg); width: 120px; left: -120px;"></div>
+            <div class="hud-label" style="left: -280px;">40mm CARBON DRIVER CORE</div>
+          </div>
+          <!-- V3 Processor Chip callout -->
+          <div class="hud-point" id="hud-processor" style="top: 52%; left: 58%;">
+            <div class="hud-ring"></div>
+            <div class="hud-line" style="transform: rotate(-20deg); width: 120px;"></div>
+            <div class="hud-label">SONY V3 SILENT CHIP</div>
+          </div>
+          <!-- 8-Microphone Array callout -->
+          <div class="hud-point" id="hud-mics" style="top: 68%; left: 62%;">
+            <div class="hud-ring"></div>
+            <div class="hud-line" style="transform: rotate(15deg); width: 120px;"></div>
+            <div class="hud-label">8-MIC PRECISION FEEDBACK</div>
+          </div>
+        </div>
+
+        <!-- Technical Running Details overlay -->
+        <div class="tech-details" id="tech-details">
+          SYS_STATUS: ACTIVE<br>
+          LATENCY: 0.04ms<br>
+          FRAME_INDEX: <span id="frame-counter">000</span> / 240<br>
+          BATTERY_STATE: OPTIMIZED
+        </div>
+
+        <!-- Storytelling Narrative Overlays -->
+        <div class="story-overlays">
+
+          <!-- Stage 1: Hero Intro -->
+          <div class="scroll-section" style="justify-content: center;">
+            <div class="story-card hero-card active" id="card-hero" data-range="0,15">
+              <span class="card-label">WORLD PREMIERE</span>
+              <h1 class="hero-logo">SONY WH-1000XM6</h1>
+              <h2 class="hero-subtitle">Silence, perfected.</h2>
+              <p class="hero-desc">Flagship wireless noise cancelling, re-engineered for a world that never stops.</p>
+            </div>
+          </div>
+
+          <!-- Stage 2: Engineering Reveal -->
+          <div class="scroll-section">
+            <div class="story-card" id="card-acoustic" data-range="15,40">
+              <span class="card-label">ACOUSTICS</span>
+              <h3 class="card-title">The Carbon-Fiber Driver Core</h3>
+              <p class="card-desc">An ultra-lightweight 40mm dome diaphragm reduces weight while maximizing structural
+                rigidity, delivering high-frequency transient responses with absolute sonic fidelity.</p>
+            </div>
+          </div>
+
+          <!-- Stage 3: The Processor -->
+          <div class="scroll-section align-right">
+            <div class="story-card" id="card-processor" data-range="40,58">
+              <span class="card-label">INTELLIGENCE</span>
+              <h3 class="card-title">Proprietary V3 Silent Chip</h3>
+              <p class="card-desc">Double the processing speed of the previous generation. The Sony V3 processor adapts
+                to your environment 50,000 times per second, isolating noise in real-time.</p>
+            </div>
+          </div>
+
+          <!-- Stage 4: Microphone Array -->
+          <div class="scroll-section">
+            <div class="story-card" id="card-array" data-range="58,74">
+              <span class="card-label">RESONANCE NULLIFICATION</span>
+              <h3 class="card-title">8-Microphone Array</h3>
+              <p class="card-desc">Eight omnidirectional microphones feed environmental noise directly into
+                dual-feedback loops, actively nullifying external sounds before they reach your ears.</p>
+            </div>
+          </div>
+
+          <!-- Stage 5: Specs Grid -->
+          <div class="scroll-section specs-section" style="justify-content: center;">
+            <div class="story-card hero-card" id="card-specs" data-range="74,90">
+              <span class="card-label">SPECIFICATIONS</span>
+              <h3 class="card-title" style="margin-bottom: 0;">Uncompromising Performance</h3>
+              <div class="specs-grid">
+                <div class="spec-item">
+                  <div class="spec-val" id="spec-anc">-48dB</div>
+                  <div class="spec-name">Noise Reduction</div>
+                  <div class="spec-desc">Next-generation dual-chamber ANC core.</div>
+                </div>
+                <div class="spec-item">
+                  <div class="spec-val" id="spec-battery">50h</div>
+                  <div class="spec-name">Battery Life</div>
+                  <div class="spec-desc">Up to 50 hours of high-res playback.</div>
+                </div>
+                <div class="spec-item">
+                  <div class="spec-val" id="spec-codec">LDAC</div>
+                  <div class="spec-name">Wireless Stream</div>
+                  <div class="spec-desc">Ultra-high-definition audio transfer.</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Stage 6: Call To Action -->
+          <div class="scroll-section cta-section" style="justify-content: center;">
+            <div class="story-card cta-card" id="card-cta" data-range="90,100">
+              <span class="card-label">THE FUTURE OF AUDIO</span>
+              <h3 class="cta-title">WH-1000XM6</h3>
+              <p class="cta-subtitle">Pre-order now. Available Fall 2026.</p>
+
+              <!-- Color Switcher -->
+              <div class="color-selector">
+                <div class="color-dot black active" data-color="Matte Black"></div>
+                <div class="color-dot platinum" data-color="Liquid Platinum"></div>
+                <div class="color-dot sage" data-color="Sage Gray"></div>
+              </div>
+              <div class="color-name" id="color-name">Matte Black</div>
+
+              <button class="btn-large" id="main-preorder-btn">Reserve Yours</button>
+            </div>
+          </div>
+
+        </div> <!-- /story-overlays -->
+      </div> <!-- /sticky-viewport -->
+    </div> <!-- /scroll-track -->
+  </div> <!-- /scroll-container -->
+
+  <!-- Interactive Pre-order Drawer/Modal -->
+  <div class="modal-overlay" id="preorder-modal">
+    <div class="modal-content">
+      <button class="close-btn" id="close-modal-btn">&times;</button>
+      <h3 class="modal-title">Pre-order</h3>
+      <p class="modal-subtitle">Reserve your Sony WH-1000XM6. Shipments begin September 2026.</p>
+
+      <form id="preorder-form" onsubmit="return false;">
+        <div class="form-group">
+          <label class="form-label">Selected Finish</label>
+          <input type="text" class="form-input" id="form-color" value="Matte Black" readonly>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Full Name</label>
+          <input type="text" class="form-input" id="form-name" placeholder="John Doe" required>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Email Address</label>
+          <input type="email" class="form-input" id="form-email" placeholder="john@example.com" required>
+        </div>
+        <button type="submit" class="btn-large" style="width: 100%; border-radius: 12px; margin-top: 1rem;"
+          id="submit-preorder-btn">Submit Reservation</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Notification Toast -->
+  <div class="toast-container">
+    <div class="toast" id="toast-notify">
+      <span class="toast-icon">✓</span>
+      <span class="toast-text" id="toast-text">Color selected: Matte Black</span>
+    </div>
+  </div>
+
+</body>
+
+</html>
