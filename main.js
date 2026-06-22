@@ -70,9 +70,9 @@ document.addEventListener('DOMContentLoaded', () => {
     // Bind interactions after load
     window.addEventListener('resize', resizeCanvas);
     window.addEventListener('scroll', handleScroll);
-
     // Initial calls
     resizeCanvas();
+    setTimeout(resizeCanvas, 300);
     handleScroll();
 
     // Start canvas animation rendering loop
